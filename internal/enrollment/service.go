@@ -73,6 +73,7 @@ func (s service) Update(ctx context.Context, id string, status *string) error {
 			return ErrInvalidStatus{Status: *status}
 		}
 	}
+
 	return s.repo.Update(ctx, id, status)
 }
 

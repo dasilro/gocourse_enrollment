@@ -26,7 +26,7 @@ func main() {
 		l.Fatal(err)
 	}
 
-	courseTrans := courseSdk.NewHttpClient(os.Getenv("API_COURSE_URL"), "")
+	courseTrans := courseSdk.NewHttpClient(os.Getenv("API_COURSE_URL"), os.Getenv("API_COURSE_TOKEN"))
 	userTrans := userSdk.NewHttpClient(os.Getenv("API_USER_URL"), "")
 
 	ctx := context.Background()
