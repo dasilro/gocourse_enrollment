@@ -57,10 +57,13 @@ func (s service) Create(ctx context.Context, courseId, userId string) (*Enrollme
 		s.log.Println(err.Error())
 		return nil, err
 	}
+
+	s.log.Println("[SUCCESS] Service - Create - enrollments")
 	return &enrollment, nil
 }
 
 func (s service) GetAll(ctx context.Context, filters Filters, offset int, limit int) ([]Enrollment, error) {
+	s.log.Println("[SUCCESS] Service - GetAll - enrollments")
 	return s.repo.GetAll(ctx, filters, offset, limit)
 }
 
@@ -74,6 +77,7 @@ func (s service) Update(ctx context.Context, id string, status *string) error {
 		}
 	}
 
+	s.log.Println("[SUCCESS] Service - Update - enrollments")
 	return s.repo.Update(ctx, id, status)
 }
 
