@@ -49,7 +49,6 @@ func MakeEndpoints(s Service, paginatorLimitDefault string) Endpoints {
 func makeCreateEndpoint(s Service) Controller {
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
 		req := request.(CreateReq)
-
 		if req.CourseID == "" {
 			return nil, response.BadRequest(ErrCourseIdRequired.Error())
 		}
